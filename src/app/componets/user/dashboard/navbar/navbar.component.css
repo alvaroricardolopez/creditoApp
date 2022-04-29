@@ -1,0 +1,13 @@
+.panel{
+  background: #00843e;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.imagen{
+  display: flex;
+  justify-content: left;
+  height: 100%;
+}

@@ -1,0 +1,39 @@
+<div class="container">
+  <mat-toolbar>
+    <span>LISTA DE SOLICITUDES</span>
+  </mat-toolbar>
+
+  <table class="mat-elevation-z8 table table-hover" data-bs-spy="scroll">
+    <thead>
+      <tr>
+        <th scope="col">Solicitud</th>
+        <th scope="col">Monto</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Nombre 1</th>
+        <th scope="col">Nombre 2</th>
+        <th scope="col">Apellido 1</th>
+        <th scope="col">Apellido 2</th>
+        <th scope="col">Cedula</th>
+        <th scope="col">Revisar</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let listsol of listSols.data">
+      <tr>
+        <td>{{listsol.nombre}}</td>
+        <td>{{listsol.monto}}</td>
+        <td>{{listsol.created_at}}</td>
+        <td>{{listsol.estado_sol}}</td>
+        <td>{{listsol.cliente.nombre1_cliente}}</td>
+        <td>{{listsol.cliente.nombre2_cliente}}</td>
+        <td>{{listsol.cliente.apellido1_cliente}}</td>
+        <td>{{listsol.cliente.apellido2_cliente}}</td>
+        <td>{{listsol.cliente.cedula_cliente}}</td>
+        <td>
+          <button (click)="revisarSol(listsol.cliente.id_cliente, listsol.num_sol)">Revisar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

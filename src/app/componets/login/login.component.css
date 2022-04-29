@@ -1,0 +1,48 @@
+.panel{
+  display: flex;
+  justify-content: space-evenly;
+  height: 10%;
+  background: #F5F5F5;
+}
+
+.titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Verdana;
+  font-size: 40px;
+}
+
+.linea{
+  display: flex;
+  justify-content: initial;
+  height: 1%;
+  background: #00843e;
+}
+
+.body{
+  display: flex;
+  justify-content: center;
+  height: 89%;
+  align-items: center;
+  background: #F5F5F5;
+}
+
+.login{
+  width: 100%;
+  max-width: 330px;
+  text-align: center;
+}
+
+.ancho{
+  width: 80%;
+}
+
+.button{
+  height: 50px;
+  background-color: #00843e;
+}
+
+.spinner{
+  margin: 0 auto;
+}

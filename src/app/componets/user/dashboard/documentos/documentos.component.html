@@ -1,0 +1,143 @@
+<div class="container">
+  <mat-toolbar>
+    <span>INFORMACIÓN</span>
+  </mat-toolbar>
+
+  <mat-card style="margin-top: 10px;">
+    <form [formGroup]="cliente" (ngSubmit)="cliente.value">
+      <mat-grid-list cols="5"  rowHeight="70px">
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Primer Nombre</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Segundo Nombre</mat-label>
+            <input matInput >
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Primer Apellido</mat-label>
+            <input matInput >
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Segundo Apellido</mat-label>
+            <input matInput >
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="3">
+          <img src="./assets/img/man.png" width="250" height="250">
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Cédula</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Ciudad</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Dirección</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Telefono</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Celular</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="4" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Email</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+    </form>
+  </mat-card>
+
+  <mat-card style="margin-top: 10px;">
+    <form>
+
+      <mat-grid-list cols="4"  rowHeight="70px">
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Nombre de Crédito</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Monto</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Fecha</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Estado</mat-label>
+            <mat-select>
+              <mat-option value="one">Aprobado</mat-option>
+              <mat-option value="two">Denegado</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="4" [rowspan]="2">
+          <mat-form-field class="ancho">
+            <mat-label>Oservación</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <button mat-flat-button color="primary" class="button ancho">Aceptar</button>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <button mat-flat-button color="primary" class="button ancho" [routerLink]="['/dashboard/solicitudes']">Regresar</button>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+    </form>
+  </mat-card>
+
+</div>
