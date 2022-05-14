@@ -9,18 +9,22 @@ import { MofificarComponent } from './mofificar/mofificar.component';
 import { SolicitudComponent } from './solicitud/solicitud.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent, children:[
-    { path: '', component: InicioComponent},
-    { path: 'ingresar', component: DatosComponent},
-    { path: 'buscar', component: BuscarComponent},
-    { path: 'modificar', component: ModificarComponent},
-    { path: 'solicitud', component: SolicitudComponent},
-    { path: 'buscador', component: MofificarComponent},
-  ]}
+	{
+		path: '',
+		component: DashboardComponent,
+		children: [
+			{ path: '', component: InicioComponent },
+			{ path: 'ingresar', component: DatosComponent },
+			{ path: 'buscar', component: BuscarComponent },
+			{ path: 'modificar', component: ModificarComponent },
+			{ path: 'solicitud', component: SolicitudComponent },
+			{ path: 'buscador', component: MofificarComponent }
+		]
+	}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
-export class DashboardRoutingModule { }
+export class DashboardRoutingModule {}

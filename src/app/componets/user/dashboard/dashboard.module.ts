@@ -10,20 +10,15 @@ import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { BuscarComponent } from './buscar/buscar.component';
 import { DocumentosComponent } from './documentos/documentos.component';
 
-
 @NgModule({
-  declarations: [
-    DashboardComponent,
-    InicioComponent,
-    NavbarComponent,
-    SolicitudesComponent,
-    BuscarComponent,
-    DocumentosComponent
-  ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule,
-    SharedModule
-  ]
+	declarations: [
+		DashboardComponent,
+		InicioComponent,
+		NavbarComponent,
+		SolicitudesComponent,
+		BuscarComponent,
+		DocumentosComponent
+	],
+	imports: [CommonModule, DashboardRoutingModule, SharedModule]
 })
-export class DashboardModule { }
+export class DashboardModule {}

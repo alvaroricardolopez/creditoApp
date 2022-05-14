@@ -1,93 +1,100 @@
 <div class="container">
-  <mat-toolbar>
-    <span>REGISTRO DE DATOS</span>
-  </mat-toolbar>
+	<mat-toolbar>
+		<span>REGISTRO DE DATOS</span>
+	</mat-toolbar>
 
-  <mat-card style="margin-top: 10px;">
-    <form [formGroup]="ClientForm" (ngSubmit)="addCliente(ClientForm.value)">
-      <mat-grid-list cols="5"  rowHeight="70px">
+	<mat-card style="margin-top: 10px">
+		<form
+			[formGroup]="ClientForm"
+			(ngSubmit)="addCliente(ClientForm.value)"
+		>
+			<mat-grid-list cols="5" rowHeight="70px">
+				<mat-grid-tile [colspan]="1" [rowspan]="1">
+					<mat-form-field class="ancho">
+						<mat-label>Primer Nombre</mat-label>
+						<input matInput formControlName="nombre1_cliente" />
+					</mat-form-field>
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <mat-form-field class="ancho">
-            <mat-label>Primer Nombre</mat-label>
-            <input matInput formControlName="nombre1_cliente">
-          </mat-form-field>
-        </mat-grid-tile>
+				<mat-grid-tile [colspan]="1" [rowspan]="1">
+					<mat-form-field class="ancho">
+						<mat-label>Segundo Nombre</mat-label>
+						<input matInput formControlName="nombre2_cliente" />
+					</mat-form-field>
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <mat-form-field class="ancho">
-            <mat-label>Segundo Nombre</mat-label>
-            <input matInput formControlName="nombre2_cliente">
-          </mat-form-field>
-        </mat-grid-tile>
+				<mat-grid-tile [colspan]="1" [rowspan]="1">
+					<mat-form-field class="ancho">
+						<mat-label>Primer Apellido</mat-label>
+						<input matInput formControlName="apellido1_cliente" />
+					</mat-form-field>
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <mat-form-field class="ancho">
-            <mat-label>Primer Apellido</mat-label>
-            <input matInput formControlName="apellido1_cliente">
-          </mat-form-field>
-        </mat-grid-tile>
+				<mat-grid-tile [colspan]="1" [rowspan]="1">
+					<mat-form-field class="ancho">
+						<mat-label>Segundo Apellido</mat-label>
+						<input matInput formControlName="apellido2_cliente" />
+					</mat-form-field>
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <mat-form-field class="ancho">
-            <mat-label>Segundo Apellido</mat-label>
-            <input matInput formControlName = "apellido2_cliente">
-          </mat-form-field>
-        </mat-grid-tile>
+				<mat-grid-tile [colspan]="1" [rowspan]="3">
+					<img src="./assets/img/man.png" width="250" height="250" />
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="1" [rowspan]="3">
-          <img src="./assets/img/man.png" width="250" height="250">
-        </mat-grid-tile>
+				<mat-grid-tile [colspan]="1" [rowspan]="1">
+					<mat-form-field class="ancho">
+						<mat-label>Cédula</mat-label>
+						<input matInput formControlName="cedula_cliente" />
+					</mat-form-field>
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <mat-form-field class="ancho">
-            <mat-label>Cédula</mat-label>
-            <input matInput formControlName = "cedula_cliente">
-          </mat-form-field>
-        </mat-grid-tile>
+				<mat-grid-tile [colspan]="1" [rowspan]="1">
+					<mat-form-field class="ancho">
+						<mat-label>Ciudad</mat-label>
+						<input matInput formControlName="ciudad_cliente" />
+					</mat-form-field>
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <mat-form-field class="ancho">
-            <mat-label>Ciudad</mat-label>
-            <input matInput formControlName ="ciudad_cliente">
-          </mat-form-field>
-        </mat-grid-tile>
+				<mat-grid-tile [colspan]="2" [rowspan]="1">
+					<mat-form-field class="ancho">
+						<mat-label>Dirección</mat-label>
+						<input matInput formControlName="direccion_cliente" />
+					</mat-form-field>
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="2" [rowspan]="1">
-          <mat-form-field class="ancho">
-            <mat-label>Dirección</mat-label>
-            <input matInput formControlName ="direccion_cliente">
-          </mat-form-field>
-        </mat-grid-tile>
+				<mat-grid-tile [colspan]="2" [rowspan]="1">
+					<mat-form-field class="ancho">
+						<mat-label>Telefono</mat-label>
+						<input matInput formControlName="telefono_cliente" />
+					</mat-form-field>
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="2" [rowspan]="1">
-          <mat-form-field class="ancho">
-            <mat-label>Telefono</mat-label>
-            <input matInput formControlName ="telefono_cliente">
-          </mat-form-field>
-        </mat-grid-tile>
+				<mat-grid-tile [colspan]="2" [rowspan]="1">
+					<mat-form-field class="ancho">
+						<mat-label>Celular</mat-label>
+						<input matInput formControlName="celular_cliente" />
+					</mat-form-field>
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="2" [rowspan]="1">
-          <mat-form-field class="ancho">
-            <mat-label>Celular</mat-label>
-            <input matInput formControlName ="celular_cliente">
-          </mat-form-field>
-        </mat-grid-tile>
+				<mat-grid-tile [colspan]="4" [rowspan]="1">
+					<mat-form-field class="ancho">
+						<mat-label>Email</mat-label>
+						<input matInput formControlName="email_cliente" />
+					</mat-form-field>
+				</mat-grid-tile>
 
-        <mat-grid-tile [colspan]="4" [rowspan]="1">
-          <mat-form-field class="ancho">
-            <mat-label>Email</mat-label>
-            <input matInput formControlName ="email_cliente">
-          </mat-form-field>
-        </mat-grid-tile>
-
-        <mat-grid-tile [colspan]="4" [rowspan]="1">
-          <button mat-flat-button color="primary" class="button ancho" type="submit" [disabled]="!ClientForm.value">Ingresar</button>
-        </mat-grid-tile>
-
-      </mat-grid-list>
-    </form>
-  </mat-card>
-
-
+				<mat-grid-tile [colspan]="4" [rowspan]="1">
+					<button
+						mat-flat-button
+						color="primary"
+						class="button ancho"
+						type="submit"
+						[disabled]="!ClientForm.value"
+					>
+						Ingresar
+					</button>
+				</mat-grid-tile>
+			</mat-grid-list>
+		</form>
+	</mat-card>
 </div>

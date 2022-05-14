@@ -6,24 +6,23 @@ import { environment as ENV } from 'src/environments/environment';
 import { Cliente } from '../componets/model/cliente.interface';
 
 const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Authorization': 'my-auth-token'
-  })
+	headers: new HttpHeaders({
+		'Content-Type': 'application/json',
+		Authorization: 'my-auth-token'
+	})
 };
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class DocumentosService {
+	constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+	getDatos(): Observable<getDato> {
+		return this.http.get<getDato>(ENV.apiUrl + '/auth/getDatos');
+	}
 
-  getDatos(): Observable<getDato>{
-    return this.http.get<getDato>(ENV.apiUrl + "/auth/getDatos");
-  }
-
-  getCliente(id:number){
-    return this.http.get<Cliente>(ENV.apiUrl + "/auth/show1/" + id);
-  }
+	getCliente(id: number) {
+		return this.http.get<Cliente>(`${ENV.apiUrl}/auth/getCliente/${id}`);
+	}
 }

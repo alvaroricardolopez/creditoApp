@@ -1,22 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.container{
-  display: block;
-  justify-content: center;
-  align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 7px;
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-.container1{
-  display: block;
-  justify-content: center;
-  align-items: center;
-  margin-left: 600px;
-  margin-right: 600px;
-  margin-top: 10px;
+.container {
+	display: block;
+	justify-content: center;
+	align-items: center;
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 7px;
+}
+
+.container1 {
+	display: block;
+	justify-content: center;
+	align-items: center;
+	margin-left: 600px;
+	margin-right: 600px;
+	margin-top: 10px;
 }

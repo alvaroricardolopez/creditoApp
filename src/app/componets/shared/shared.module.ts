@@ -21,41 +21,41 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    MatSliderModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    MatProgressSpinnerModule,
-    MatToolbarModule,
-    MatIconModule,
-    HttpClientModule,
-    MatTableModule,
-    MatCardModule,
-    MatGridListModule,
-    MatSelectModule,
-    MatStepperModule
-  ],
-  exports: [
-    MatSliderModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    MatProgressSpinnerModule,
-    MatToolbarModule,
-    MatIconModule,
-    HttpClientModule,
-    MatTableModule,
-    MatCardModule,
-    MatGridListModule,
-    MatSelectModule,
-    MatStepperModule
-  ]
+	declarations: [],
+	imports: [
+		CommonModule,
+		MatSliderModule,
+		MatFormFieldModule,
+		MatInputModule,
+		MatButtonModule,
+		ReactiveFormsModule,
+		MatSnackBarModule,
+		MatProgressSpinnerModule,
+		MatToolbarModule,
+		MatIconModule,
+		HttpClientModule,
+		MatTableModule,
+		MatCardModule,
+		MatGridListModule,
+		MatSelectModule,
+		MatStepperModule
+	],
+	exports: [
+		MatSliderModule,
+		MatFormFieldModule,
+		MatInputModule,
+		MatButtonModule,
+		ReactiveFormsModule,
+		MatSnackBarModule,
+		MatProgressSpinnerModule,
+		MatToolbarModule,
+		MatIconModule,
+		HttpClientModule,
+		MatTableModule,
+		MatCardModule,
+		MatGridListModule,
+		MatSelectModule,
+		MatStepperModule
+	]
 })
-export class SharedModule { }
+export class SharedModule {}

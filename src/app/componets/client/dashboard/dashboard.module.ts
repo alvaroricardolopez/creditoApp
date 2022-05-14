@@ -12,22 +12,17 @@ import { BuscarComponent } from './buscar/buscar.component';
 import { MofificarComponent } from './mofificar/mofificar.component';
 import { ModificarComponent } from './modificar/modificar.component';
 
-
 @NgModule({
-  declarations: [
-    DashboardComponent,
-    InicioComponent,
-    NavbarComponent,
-    DatosComponent,
-    SolicitudComponent,
-    BuscarComponent,
-    MofificarComponent,
-    ModificarComponent
-  ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule,
-    SharedModule
-  ]
+	declarations: [
+		DashboardComponent,
+		InicioComponent,
+		NavbarComponent,
+		DatosComponent,
+		SolicitudComponent,
+		BuscarComponent,
+		MofificarComponent,
+		ModificarComponent
+	],
+	imports: [CommonModule, DashboardRoutingModule, SharedModule]
 })
-export class DashboardModule { }
+export class DashboardModule {}

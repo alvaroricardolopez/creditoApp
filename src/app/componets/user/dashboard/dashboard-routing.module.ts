@@ -7,16 +7,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent, children:[
-    { path: '', component: InicioComponent},
-    { path: 'solicitudes', component: SolicitudesComponent},
-    { path: 'buscar', component: BuscarComponent},
-    { path: 'documentos/:num_sol/:id_cliente', component: DocumentosComponent}
-  ]}
+	{
+		path: '',
+		component: DashboardComponent,
+		children: [
+			{ path: '', component: InicioComponent },
+			{ path: 'solicitudes', component: SolicitudesComponent },
+			{ path: 'buscar', component: BuscarComponent },
+			{
+				path: 'documentos/:num_sol/:id_cliente',
+				component: DocumentosComponent
+			}
+		]
+	}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
-export class DashboardRoutingModule { }
+export class DashboardRoutingModule {}

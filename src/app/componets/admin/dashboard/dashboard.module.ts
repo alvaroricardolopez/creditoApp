@@ -7,17 +7,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-
 @NgModule({
-  declarations: [
-    DashboardComponent,
-    InicioComponent,
-    NavbarComponent
-  ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule,
-    SharedModule
-  ]
+	declarations: [DashboardComponent, InicioComponent, NavbarComponent],
+	imports: [CommonModule, DashboardRoutingModule, SharedModule]
 })
-export class DashboardModule { }
+export class DashboardModule {}

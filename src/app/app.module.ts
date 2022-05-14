@@ -10,20 +10,15 @@ import { SharedModule } from './componets/shared/shared.module';
 import { LoginComponent } from './componets/login/login.component';
 import { DatosComponent } from './componets/client/datos/datos.component';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    DatosComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    SharedModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent, LoginComponent, DatosComponent],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		SharedModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

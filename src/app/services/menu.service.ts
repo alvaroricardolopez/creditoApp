@@ -4,14 +4,12 @@ import { Observable } from 'rxjs';
 import { Menu } from '../interfaces/menu';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class MenuService {
+	constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getMenu(): Observable<Menu[]>{
-    return this.http.get<Menu[]>('./assets/data/menu.json')
-  }
-
+	getMenu(): Observable<Menu[]> {
+		return this.http.get<Menu[]>('./assets/data/menu.json');
+	}
 }
