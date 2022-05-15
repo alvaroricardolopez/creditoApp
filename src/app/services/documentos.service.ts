@@ -5,13 +5,6 @@ import { Injectable } from '@angular/core';
 import { environment as ENV } from 'src/environments/environment';
 import { Cliente } from '../componets/model/cliente.interface';
 
-const httpOptions = {
-	headers: new HttpHeaders({
-		'Content-Type': 'application/json',
-		Authorization: 'my-auth-token'
-	})
-};
-
 @Injectable({
 	providedIn: 'root'
 })
