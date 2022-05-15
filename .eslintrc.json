@@ -1,9 +1,9 @@
 {
 	"root": true,
-  "env": {
-    "browser": true,
-    "es6": true
-  },
+	"env": {
+		"browser": true,
+		"es6": true
+	},
 	"ignorePatterns": ["projects/**/*"],
 	"overrides": [
 		{
@@ -21,12 +21,12 @@
 				"plugin:prettier/recommended"
 			],
 			"rules": {
-        "no-empty-function": "off",
-        "@typescript-eslint/no-empty-function": "off",
-        "@angular-eslint/no-empty-lifecycle-method": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-floating-promises": "off",
+				"no-empty-function": "off",
+				"@typescript-eslint/no-empty-function": "off",
+				"@angular-eslint/no-empty-lifecycle-method": "off",
+				"@typescript-eslint/no-unsafe-member-access": "off",
+				"@typescript-eslint/no-unsafe-assignment": "off",
+				"@typescript-eslint/no-floating-promises": "off",
 				"@angular-eslint/component-selector": [
 					"error",
 					{
@@ -49,7 +49,8 @@
 						"ignoreStatic": true
 					}
 				],
-        "@typescript-eslint/restrict-plus-operands":"error"
+				"@typescript-eslint/restrict-plus-operands": "error",
+				"eqeqeq": ["error", "smart"]
 			}
 		},
 		{
