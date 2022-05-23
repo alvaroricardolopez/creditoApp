@@ -28,7 +28,8 @@ export class LoginComponent implements OnInit {
 	ingresar() {
 		const usuario = this.form.value.usuario;
 		const password = this.form.value.password;
-
+		console.log(usuario, password);
+		localStorage.setItem('user_name', 'alvaro');
 		if (usuario === 'alvaro' && password === '123') {
 			this.fakeLoading();
 		} else {
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit {
 	fakeLoading() {
 		this.loading = true;
 		setTimeout(() => {
-			this.router.navigate(['dashboard']);
+			this.router.navigate(['/dashboard']);
 		}, 1500);
 	}
 }
