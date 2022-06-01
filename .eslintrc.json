@@ -50,7 +50,13 @@
 					}
 				],
 				"@typescript-eslint/restrict-plus-operands": "error",
-				"eqeqeq": ["error", "smart"]
+				"eqeqeq": ["error", "smart"],
+        "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto"
+          }
+        ]
 			}
 		},
 		{
