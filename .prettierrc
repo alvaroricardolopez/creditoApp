@@ -20,14 +20,5 @@
         "parser": "html"
       }
     }
-<<<<<<< HEAD
-  ],
-  "prettier/prettier": [
-    "error",
-    {
-      "endOfLine": "auto"
-    }
-=======
->>>>>>> d61eb2f414e900a32012b1dc02ae68f25f6748bf
   ]
 }
