@@ -1,6 +1,6 @@
 import { getDato } from './../../../model/documentos.interface';
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/componets/model/cliente.interface';
+import { Cliente } from 'src/app/components/model/cliente.interface';
 import { DocumentosService } from 'src/app/services/documentos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';

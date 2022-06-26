@@ -10,5 +10,9 @@
 	{
 		"nombre": "Buscar",
 		"redirect": "/dashboard/buscar"
-	}
+	},
+  {
+    "nombre": "Perfil",
+    "redirect": "/dashboard/buscar"
+  }
 ]

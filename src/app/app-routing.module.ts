@@ -1,7 +1,8 @@
-import { LoginComponent } from './componets/login/login.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './config/guard/auth.guard';
+import { LoginComponent } from '@app/components/login/login.component';
 
 const routes: Routes = [
 	{
@@ -9,23 +10,23 @@ const routes: Routes = [
 		canActivate: [AuthGuard],
 		children: [
 			{
-				path: 'dashboard',
+				path: 'users',
 				loadChildren: () =>
-					import('./componets/user/dashboard/dashboard.module').then(
+					import('./components/user/dashboard/dashboard.module').then(
 						(x) => x.DashboardModule
 					)
 			},
 			{
-				path: 'credito',
+				path: 'client',
 				loadChildren: () =>
 					import(
-						'./componets/client/dashboard/dashboard.module'
+						'./components/client/dashboard/dashboard.module'
 					).then((y) => y.DashboardModule)
 			},
 			{
 				path: 'dashboard',
 				loadChildren: () =>
-					import('./componets/admin/dashboard/dashboard.module').then(
+					import('./components/admin/dashboard/dashboard.module').then(
 						(z) => z.DashboardModule
 					)
 			}

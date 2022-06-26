@@ -9,7 +9,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DatosComponent } from './datos/datos.component';
 import { SolicitudComponent } from './solicitud/solicitud.component';
 import { BuscarComponent } from './buscar/buscar.component';
-import { MofificarComponent } from './mofificar/mofificar.component';
 import { ModificarComponent } from './modificar/modificar.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { ModificarComponent } from './modificar/modificar.component';
 		DatosComponent,
 		SolicitudComponent,
 		BuscarComponent,
-		MofificarComponent,
 		ModificarComponent
 	],
 	imports: [CommonModule, DashboardRoutingModule, SharedModule]

@@ -1,9 +1,9 @@
-import { getDato } from './../componets/model/documentos.interface';
+import { getDato } from '../components/model/documentos.interface';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment as ENV } from 'src/environments/environment';
-import { Cliente } from '../componets/model/cliente.interface';
+import { Cliente } from '../components/model/cliente.interface';
 
 @Injectable({
 	providedIn: 'root'
