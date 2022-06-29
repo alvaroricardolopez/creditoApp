@@ -10,6 +10,7 @@ import { DatosComponent } from './datos/datos.component';
 import { SolicitudComponent } from './solicitud/solicitud.component';
 import { BuscarComponent } from './buscar/buscar.component';
 import { ModificarComponent } from './modificar/modificar.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
 	declarations: [
@@ -19,7 +20,8 @@ import { ModificarComponent } from './modificar/modificar.component';
 		DatosComponent,
 		SolicitudComponent,
 		BuscarComponent,
-		ModificarComponent
+		ModificarComponent,
+		ProfileComponent
 	],
 	imports: [CommonModule, DashboardRoutingModule, SharedModule]
 })
