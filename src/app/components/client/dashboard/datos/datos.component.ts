@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { ClienteService } from './../../../../services/cliente.service';
+import { ClienteService } from '@app/services/cliente.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Cliente } from 'src/app/components/model/cliente.interface';
