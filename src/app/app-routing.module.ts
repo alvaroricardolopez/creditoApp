@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './config/guard/auth.guard';
@@ -26,9 +25,9 @@ const routes: Routes = [
 			{
 				path: 'dashboard',
 				loadChildren: () =>
-					import('./components/admin/dashboard/dashboard.module').then(
-						(z) => z.DashboardModule
-					)
+					import(
+						'./components/admin/dashboard/dashboard.module'
+					).then((z) => z.DashboardModule)
 			}
 		]
 	},

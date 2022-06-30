@@ -51,12 +51,12 @@
 				],
 				"@typescript-eslint/restrict-plus-operands": "error",
 				"eqeqeq": ["error", "smart"],
-        "prettier/prettier": [
-          "error",
-          {
-            "endOfLine": "auto"
-          }
-        ]
+				"prettier/prettier": [
+					"error",
+					{
+						"endOfLine": "auto"
+					}
+				]
 			}
 		},
 		{

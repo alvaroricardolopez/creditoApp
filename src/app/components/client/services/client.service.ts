@@ -11,6 +11,13 @@ export class ClientService {
 	constructor(private http: HttpClient) {}
 
 	getClientById(id: number): Observable<Client> {
-		return this.http.get<Client>(ENV.apiUrl + '/clientes/' + id);
+		console.log(
+			'Ruta para guardar: ' + ENV.apiUrl + '/clientes/' + id.toString()
+		);
+		return this.http.get<Client>(ENV.apiUrl + '/clientes/' + id.toString());
+	}
+
+	postClient(client: Client) {
+		return this.http.post(ENV.apiUrl + '/clientes', client);
 	}
 }

@@ -18,7 +18,7 @@ const routes: Routes = [
 			{ path: 'buscar', component: BuscarComponent },
 			{ path: 'modificar', component: ModificarComponent },
 			{ path: 'solicitud', component: SolicitudComponent },
-      { path: "perfil", component: ProfileComponent}
+			{ path: 'perfil', component: ProfileComponent }
 		]
 	}
 ];
