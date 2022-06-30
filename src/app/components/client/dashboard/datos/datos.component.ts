@@ -37,6 +37,6 @@ export class DatosComponent implements OnInit {
 		this.clientService
 			.postClient(form)
 			.subscribe((data) => console.log(data));
-		// this.router.navigate(['/credito/buscador']);
+		this.router.navigate(['/client/perfil']);
 	}
 }
