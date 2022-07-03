@@ -29,7 +29,7 @@ export class DatosComponent implements OnInit {
 			celular: [null, Validators.required],
 			correo: [null, Validators.required],
 			contrasenia: [null, Validators.required],
-			estado: [false, Validators.required] //Estado por defecto?
+			estado: [true, Validators.required] //Estado por defecto?
 		});
 	}
 
@@ -37,6 +37,6 @@ export class DatosComponent implements OnInit {
 		this.clientService
 			.postClient(form)
 			.subscribe((data) => console.log(data));
-		this.router.navigate(['/client/perfil']);
+		this.router.navigate(['/login']);
 	}
 }

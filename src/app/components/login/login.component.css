@@ -40,7 +40,14 @@
 
 .button {
 	height: 50px;
+  margin-bottom:  1em;
 	background-color: #00843e;
+}
+
+.button2 {
+	height: 50px;
+  margin-bottom:  1em;
+	background-color: #1866af;
 }
 
 .spinner {

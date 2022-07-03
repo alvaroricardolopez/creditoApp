@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './config/guard/auth.guard';
 import { LoginComponent } from '@app/components/login/login.component';
+import { DatosComponent } from './components/client/dashboard/datos/datos.component';
 
 const routes: Routes = [
 	{
@@ -31,7 +32,8 @@ const routes: Routes = [
 			}
 		]
 	},
-	{ path: 'login', component: LoginComponent }
+	{ path: 'login', component: LoginComponent },
+	{ path: 'registro', component: DatosComponent }
 ];
 
 @NgModule({

@@ -11,23 +11,22 @@ import { Observable } from 'rxjs';
 export class AuthService {
 	constructor(private http: HttpClient, private router: Router) {}
 
-	getUser(): Observable<any> {
-		return this.http.get<any>(ENV.apiUrl + 'usuario');
+	getUser(email: string): Observable<any> {
+		return this.http.get<any>(ENV.apiUrl + '/clientes?correo=' + email); //aqui vaun and para la consulta
 	}
 
 	getProfile() {
-		const user_name = localStorage.getItem('user_name') ?? '';
-		const parserString: string = JSON.parse(user_name);
+		const cliente = localStorage.getItem('cliente') ?? '';
+		const parserString: string = JSON.parse(cliente);
 		return parserString;
 	}
 
 	isAuthenticated() {
-		return localStorage.getItem('user_name');
+		return localStorage.getItem('cliente');
 	}
 
 	logout() {
-		localStorage.removeItem('user_name');
-		localStorage.removeItem('name');
+		localStorage.removeItem('cliente');
 		this.router.navigate(['/login']);
 	}
 }

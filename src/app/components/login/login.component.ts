@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AuthService } from '@app/services/auth/auth.service';
 
 @Component({
 	selector: 'app-login',
@@ -14,46 +15,46 @@ export class LoginComponent implements OnInit {
 
 	constructor(
 		private fb: FormBuilder,
+		private authservice: AuthService,
 		private _snackBar: MatSnackBar,
 		private router: Router
 	) {
 		this.form = this.fb.group({
-			usuario: ['', Validators.required],
-			password: ['', Validators.required]
+			correo: ['', Validators.required],
+			contrasenia: ['', Validators.required]
 		});
 	}
 
-	ngOnInit(): void {}
-
-	ingresar() {
-		const usuario = this.form.value.usuario;
-		const password = this.form.value.password;
-		console.log(usuario, password);
-		localStorage.setItem('user_name', 'alvaro');
-		if (usuario === 'alvaro' && password === '123') {
-			this.fakeLoading();
-		} else {
-			this.error();
-			this.form.reset();
+	ngOnInit(): void {
+		if (this.authservice.isAuthenticated()) {
+			this.router.navigate(['/client/perfil']);
 		}
 	}
 
-	error() {
-		this._snackBar.open(
-			'Usuario o contraseña ingresado son invalidos',
-			'',
-			{
-				duration: 5000,
-				horizontalPosition: 'center',
-				verticalPosition: 'bottom'
-			}
-		);
-	}
+	ingresar(form: any) {
+		const correo = form.correo;
+		const contrasenia = form.contrasenia;
+		let correoCoincide = false;
+		let contraseniaCoincide = false;
 
-	fakeLoading() {
-		this.loading = true;
-		setTimeout(() => {
-			this.router.navigate(['/dashboard']);
-		}, 1500);
+		this.authservice.getUser(correo).subscribe((data) => {
+			if (data.length !== 0) {
+				correoCoincide = true;
+				if (data[0].contrasenia === contrasenia) {
+					contraseniaCoincide = true;
+					console.log(data[0]);
+					const user = {
+						nombres: data[0].nombres,
+						apellidos: data[0].apellidos,
+						correo: data[0].correo
+					};
+					localStorage.setItem('cliente', JSON.stringify(user));
+					this.router.navigate(['/client/perfil']);
+				}
+			}
+			if (!(correoCoincide && contraseniaCoincide)) {
+				alert('Credenciales inválidas');
+			}
+		});
 	}
 }

@@ -1,97 +1,110 @@
-<div class="container">
-	<mat-toolbar>
-		<span>REGISTRO DE DATOS</span>
-	</mat-toolbar>
+<div class="panel">
+	<img src="./assets/img/Rio.png" />
+	<h1 class="titulo">COOPERATIVA DE AHORRO Y CRÉDITO RIOBAMBA LTDA.</h1>
+</div>
+<div class="linea"></div>
+<div class="body">
+	<div class="registro">
+		<div class="container">
+			<mat-toolbar>
+				<span>REGISTRO DE DATOS</span>
+			</mat-toolbar>
 
-	<mat-card style="margin-top: 10px">
-		<form
-			[formGroup]="ClientForm"
-			(ngSubmit)="addCliente(ClientForm.value)"
-		>
-			<mat-grid-list cols="5" rowHeight="70px">
-				<mat-grid-tile [colspan]="2" [rowspan]="1">
-					<mat-form-field class="ancho">
-						<mat-label>Nombres</mat-label>
-						<input matInput formControlName="nombres" />
-					</mat-form-field>
-				</mat-grid-tile>
+			<mat-card style="margin-top: 10px">
+				<form
+					[formGroup]="ClientForm"
+					(ngSubmit)="addCliente(ClientForm.value)"
+				>
+					<mat-grid-list cols="5" rowHeight="70px">
+						<mat-grid-tile [colspan]="2" [rowspan]="1">
+							<mat-form-field class="ancho">
+								<mat-label>Nombres</mat-label>
+								<input matInput formControlName="nombres" />
+							</mat-form-field>
+						</mat-grid-tile>
 
-				<mat-grid-tile [colspan]="2" [rowspan]="1">
-					<mat-form-field class="ancho">
-						<mat-label>Apellidos</mat-label>
-						<input matInput formControlName="apellidos" />
-					</mat-form-field>
-				</mat-grid-tile>
+						<mat-grid-tile [colspan]="2" [rowspan]="1">
+							<mat-form-field class="ancho">
+								<mat-label>Apellidos</mat-label>
+								<input matInput formControlName="apellidos" />
+							</mat-form-field>
+						</mat-grid-tile>
 
-				<mat-grid-tile [colspan]="1" [rowspan]="3">
-					<img src="./assets/img/man.png" width="250" height="250" />
-				</mat-grid-tile>
+						<mat-grid-tile [colspan]="1" [rowspan]="3">
+							<img
+								src="./assets/img/man.png"
+								width="250"
+								height="250"
+							/>
+						</mat-grid-tile>
 
-				<mat-grid-tile [colspan]="1" [rowspan]="1">
-					<mat-form-field class="ancho">
-						<mat-label>Cédula</mat-label>
-						<input matInput formControlName="cedula" />
-					</mat-form-field>
-				</mat-grid-tile>
+						<mat-grid-tile [colspan]="1" [rowspan]="1">
+							<mat-form-field class="ancho">
+								<mat-label>Cédula</mat-label>
+								<input matInput formControlName="cedula" />
+							</mat-form-field>
+						</mat-grid-tile>
 
-				<mat-grid-tile [colspan]="1" [rowspan]="1">
-					<mat-form-field class="ancho">
-						<mat-label>Ciudad</mat-label>
-						<input matInput formControlName="ciudad" />
-					</mat-form-field>
-				</mat-grid-tile>
+						<mat-grid-tile [colspan]="1" [rowspan]="1">
+							<mat-form-field class="ancho">
+								<mat-label>Ciudad</mat-label>
+								<input matInput formControlName="ciudad" />
+							</mat-form-field>
+						</mat-grid-tile>
 
-				<mat-grid-tile [colspan]="2" [rowspan]="1">
-					<mat-form-field class="ancho">
-						<mat-label>Dirección</mat-label>
-						<input matInput formControlName="direccion" />
-					</mat-form-field>
-				</mat-grid-tile>
+						<mat-grid-tile [colspan]="2" [rowspan]="1">
+							<mat-form-field class="ancho">
+								<mat-label>Dirección</mat-label>
+								<input matInput formControlName="direccion" />
+							</mat-form-field>
+						</mat-grid-tile>
 
-				<mat-grid-tile [colspan]="2" [rowspan]="1">
-					<mat-form-field class="ancho">
-						<mat-label>Telefono</mat-label>
-						<input matInput formControlName="telefono" />
-					</mat-form-field>
-				</mat-grid-tile>
+						<mat-grid-tile [colspan]="2" [rowspan]="1">
+							<mat-form-field class="ancho">
+								<mat-label>Telefono</mat-label>
+								<input matInput formControlName="telefono" />
+							</mat-form-field>
+						</mat-grid-tile>
 
-				<mat-grid-tile [colspan]="2" [rowspan]="1">
-					<mat-form-field class="ancho">
-						<mat-label>Celular</mat-label>
-						<input matInput formControlName="celular" />
-					</mat-form-field>
-				</mat-grid-tile>
+						<mat-grid-tile [colspan]="2" [rowspan]="1">
+							<mat-form-field class="ancho">
+								<mat-label>Celular</mat-label>
+								<input matInput formControlName="celular" />
+							</mat-form-field>
+						</mat-grid-tile>
 
-				<mat-grid-tile [colspan]="4" [rowspan]="1">
-					<mat-form-field class="ancho">
-						<mat-label>Email</mat-label>
-						<input matInput formControlName="correo" />
-					</mat-form-field>
-				</mat-grid-tile>
+						<mat-grid-tile [colspan]="4" [rowspan]="1">
+							<mat-form-field class="ancho">
+								<mat-label>Email</mat-label>
+								<input matInput formControlName="correo" />
+							</mat-form-field>
+						</mat-grid-tile>
 
-				<mat-grid-tile [colspan]="4" [rowspan]="1">
-					<mat-form-field class="ancho">
-						<mat-label>Contraseña</mat-label>
-						<input
-							type="password"
-							matInput
-							formControlName="contrasenia"
-						/>
-					</mat-form-field>
-				</mat-grid-tile>
+						<mat-grid-tile [colspan]="4" [rowspan]="1">
+							<mat-form-field class="ancho">
+								<mat-label>Contraseña</mat-label>
+								<input
+									type="password"
+									matInput
+									formControlName="contrasenia"
+								/>
+							</mat-form-field>
+						</mat-grid-tile>
 
-				<mat-grid-tile [colspan]="4" [rowspan]="1">
-					<button
-						mat-flat-button
-						color="primary"
-						class="button ancho"
-						type="submit"
-						[disabled]="!ClientForm.value"
-					>
-						Ingresar
-					</button>
-				</mat-grid-tile>
-			</mat-grid-list>
-		</form>
-	</mat-card>
+						<mat-grid-tile [colspan]="4" [rowspan]="1">
+							<button
+								mat-flat-button
+								color="primary"
+								class="button ancho"
+								type="submit"
+								[disabled]="ClientForm.value"
+							>
+								Ingresar
+							</button>
+						</mat-grid-tile>
+					</mat-grid-list>
+				</form>
+			</mat-card>
+		</div>
+	</div>
 </div>
