@@ -37,6 +37,7 @@ export class DatosComponent implements OnInit {
 		this.clientService
 			.postClient(form)
 			.subscribe((data) => console.log(data));
+		alert('Registro existoso, ahora debe iniciar sesión.');
 		this.router.navigate(['/login']);
 	}
 }
