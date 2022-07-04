@@ -43,6 +43,11 @@
 				<mat-label>{{client.celular}}</mat-label>
 			</mat-grid-tile>
 
+			<mat-grid-tile [colspan]="2" [rowspan]="1">
+				<mat-label>Estado civil:</mat-label>
+				<mat-label>{{client.estado_civil.name}}</mat-label>
+			</mat-grid-tile>
+
 			<mat-grid-tile [colspan]="4" [rowspan]="1">
 				<mat-label>Correo electrónico:</mat-label>
 				<mat-label>{{client.correo}}</mat-label>

@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
 				correoCoincide = true;
 				if (data[0].contrasenia === contrasenia) {
 					contraseniaCoincide = true;
-					console.log(data[0]);
 					const user = {
 						id: data[0].id,
 						nombres: data[0].nombres,
