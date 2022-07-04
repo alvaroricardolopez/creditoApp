@@ -79,7 +79,7 @@
 								<mat-select formControlName="estado_civil">
 									<mat-option
 										*ngFor="let estado of estados"
-										[value]="estado"
+										[value]="estado.id"
 									>
 										{{estado.name}}
 									</mat-option>
@@ -110,7 +110,7 @@
 								color="primary"
 								class="button ancho"
 								type="submit"
-								[disabled]="ClientForm.value"
+								[disabled]="!ClientForm.valid"
 							>
 								Ingresar
 							</button>
