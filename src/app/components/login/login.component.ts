@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
 					contraseniaCoincide = true;
 					console.log(data[0]);
 					const user = {
+						id: data[0].id,
 						nombres: data[0].nombres,
 						apellidos: data[0].apellidos,
 						correo: data[0].correo

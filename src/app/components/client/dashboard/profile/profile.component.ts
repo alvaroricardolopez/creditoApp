@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Cliente } from 'src/app/components/model/cliente.interface';
 import { ClientService } from '@app/components/client/services/client.service';
 import { Client } from '@app/components/client/models/client.interface';
+import { AuthService } from '@app/services/auth/auth.service';
 @Component({
 	selector: 'app-profile',
 	templateUrl: './profile.component.html',
@@ -10,10 +11,15 @@ import { Client } from '@app/components/client/models/client.interface';
 })
 export class ProfileComponent implements OnInit {
 	client: Client;
-	constructor(private router: Router, private clientService: ClientService) {}
+	constructor(
+		private router: Router,
+		private clientService: ClientService,
+		private authService: AuthService
+	) {}
 
 	ngOnInit(): void {
-		this.clientService.getClientById(5).subscribe((data) => {
+		const idUser = JSON.parse(this.authService.getProfile()).id;
+		this.clientService.getClientById(idUser).subscribe((data) => {
 			this.client = data;
 		});
 	}

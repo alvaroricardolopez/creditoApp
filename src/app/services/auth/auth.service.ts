@@ -16,9 +16,7 @@ export class AuthService {
 	}
 
 	getProfile() {
-		const cliente = localStorage.getItem('cliente') ?? '';
-		const parserString: string = JSON.parse(cliente);
-		return parserString;
+		return localStorage.getItem('cliente') ?? '';
 	}
 
 	isAuthenticated() {
