@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Client } from './../../models/client.interface';
 import { ClientService } from '../../services/client.service';
+import { Client } from '@app/components/client/models/client.interface';
 
 @Component({
 	selector: 'app-datos',
@@ -10,6 +10,8 @@ import { ClientService } from '../../services/client.service';
 	styleUrls: ['./datos.component.css']
 })
 export class DatosComponent implements OnInit {
+	estadoCivil: string;
+	estados: any = [];
 	ClientForm: FormGroup;
 
 	constructor(
@@ -27,10 +29,11 @@ export class DatosComponent implements OnInit {
 			direccion: [null, Validators.required],
 			telefono: [null],
 			celular: [null, Validators.required],
-			correo: [null, Validators.required],
+			correo: [null, Validators.email],
 			contrasenia: [null, Validators.required],
-			estado: [true, Validators.required] //Estado por defecto?
+			estado_civil: [null, Validators.required]
 		});
+		this.listEstadoCivil();
 	}
 
 	addCliente(form: Client) {
@@ -39,5 +42,11 @@ export class DatosComponent implements OnInit {
 			.subscribe((data) => console.log(data));
 		alert('Registro existoso, ahora debe iniciar sesión.');
 		this.router.navigate(['/login']);
+	}
+
+	listEstadoCivil() {
+		this.clientService.getEstadoCivil().subscribe((data) => {
+			this.estados = data;
+		});
 	}
 }

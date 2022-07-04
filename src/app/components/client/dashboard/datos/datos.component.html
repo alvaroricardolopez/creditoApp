@@ -75,6 +75,19 @@
 
 						<mat-grid-tile [colspan]="4" [rowspan]="1">
 							<mat-form-field class="ancho">
+								<mat-label>Estado civil</mat-label>
+								<mat-select formControlName="estado_civil">
+									<mat-option
+										*ngFor="let estado of estados"
+										[value]="estado"
+									>
+										{{estado.name}}
+									</mat-option>
+								</mat-select>
+							</mat-form-field>
+						</mat-grid-tile>
+						<mat-grid-tile [colspan]="4" [rowspan]="1">
+							<mat-form-field class="ancho">
 								<mat-label>Email</mat-label>
 								<input matInput formControlName="correo" />
 							</mat-form-field>

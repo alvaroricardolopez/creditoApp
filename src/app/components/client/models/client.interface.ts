@@ -7,9 +7,14 @@ export interface Client {
 	celular: number;
 	correo: string;
 	cedula: string;
-	estado_civil: any;
+	estado_civil: EstadoCivil;
 	documentos_de_clientes?: DocumentosDeCliente[];
 	solicitud_de_creditos?: any[];
+}
+
+export interface EstadoCivil {
+	id: number;
+	name: string;
 }
 
 export interface DocumentosDeCliente {
