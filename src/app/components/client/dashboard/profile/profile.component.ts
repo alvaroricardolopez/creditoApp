@@ -5,7 +5,8 @@ import { ClientService } from '@app/components/client/services/client.service';
 import { Client } from '@app/components/client/models/client.interface';
 import { AuthService } from '@app/services/auth/auth.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { FileUploadComponent } from '../../../file-upload/file-upload.component';
+import { FileUploadService } from '@app/services/file-upload.service';
+
 @Component({
 	selector: 'app-profile',
 	templateUrl: './profile.component.html',
@@ -24,25 +25,26 @@ export class ProfileComponent implements OnInit {
 		private router: Router,
 		private clientService: ClientService,
 		private authService: AuthService,
-		private fb: FormBuilder
+		private fb: FormBuilder,
+		private uploadService: FileUploadService
 	) {}
 
 	ngOnInit(): void {
 		this.formulario = this.fb.group({
-			foto: [null],
-			cedula_personal: [null],
-			papeleta_votacion_personal: [null]
-		});
-
-		this.frmPareja = this.fb.group({
-			cedula_conyugue: [null],
-			papeleta_conyugue: [null]
+			foto: null,
+			cedula_personal: null,
+			papeleta_votacion_personal: null,
+			cedulaconyuge: null,
+			papeleta_conyugue: null,
+			fileFoto: '',
+      fileSourceFoto: '',
+			fileCedulaPersonal: '',
+			filePapeleta: ''
 		});
 
 		const idUser = JSON.parse(this.authService.getProfile()).id;
 		this.clientService.getClientById(idUser).subscribe((data) => {
 			this.client = data;
-			this.emparejado(data);
 		});
 	}
 
@@ -55,5 +57,44 @@ export class ProfileComponent implements OnInit {
 		}
 	}
 
-	addCliente(form: Cliente) {}
+	onFileChange(event: any) {
+		console.log(event.target.id);
+		if (event.target.id === 'fileFoto') {
+			if (event.target.files.length > 0) {
+				const file = event.target.files[0];
+				this.formulario.patchValue({
+					fileSourceFoto: file
+				});
+			}
+		}
+    if (event.target.id === 'fileCedulaPersonal') {
+      if (event.target.files.length > 0) {
+        const file = event.target.files[0];
+        this.formulario.patchValue({
+          cedula_personal: file
+        });
+      }
+    }
+	}
+
+	addCliente(form: any) {
+		console.log(form);
+
+		this.uploadService
+			.upload(this.formulario.get('fileSourceFoto')!.value)
+			.subscribe((response: any) => {
+				this.formulario.patchValue(({
+          foto: response.id
+        }))
+			});
+
+    this.uploadService
+      .upload(this.formulario.get('fileSourceCedula')!.value)
+      .subscribe((response: any) => {
+        this.formulario.patchValue(({
+          cedula_personal: response[0].id
+        }))
+      });
+
+	}
 }
