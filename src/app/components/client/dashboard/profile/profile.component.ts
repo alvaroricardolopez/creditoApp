@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
 			cedulaconyuge: null,
 			papeleta_conyugue: null,
 			fileFoto: '',
-      fileSourceFoto: '',
+			fileSourceFoto: '',
 			fileCedulaPersonal: '',
 			filePapeleta: ''
 		});
@@ -67,14 +67,24 @@ export class ProfileComponent implements OnInit {
 				});
 			}
 		}
-    if (event.target.id === 'fileCedulaPersonal') {
-      if (event.target.files.length > 0) {
-        const file = event.target.files[0];
-        this.formulario.patchValue({
-          cedula_personal: file
-        });
-      }
-    }
+
+		if (event.target.id === 'fileCedulaPersonal') {
+			if (event.target.files.length > 0) {
+				const file = event.target.files[0];
+				this.formulario.patchValue({
+					fileCedulaPersonal: file
+				});
+			}
+		}
+
+		if (event.target.id === 'filePapeleta') {
+			if (event.target.files.length > 0) {
+				const file = event.target.files[0];
+				this.formulario.patchValue({
+					filePapeleta: file
+				});
+			}
+		}
 	}
 
 	addCliente(form: any) {
@@ -83,18 +93,26 @@ export class ProfileComponent implements OnInit {
 		this.uploadService
 			.upload(this.formulario.get('fileSourceFoto')!.value)
 			.subscribe((response: any) => {
-				this.formulario.patchValue(({
-          foto: response.id
-        }))
+				this.formulario.patchValue({
+					foto: response[0].id
+				});
 			});
 
-    this.uploadService
-      .upload(this.formulario.get('fileSourceCedula')!.value)
-      .subscribe((response: any) => {
-        this.formulario.patchValue(({
-          cedula_personal: response[0].id
-        }))
-      });
+		this.uploadService
+			.upload(this.formulario.get('fileCedulaPersonal')!.value)
+			.subscribe((response: any) => {
+				this.formulario.patchValue({
+					cedula_personal: response[0].id
+				});
+			});
 
+		this.uploadService
+			.upload(this.formulario.get('filePapeleta')!.value)
+			.subscribe((response: any) => {
+				this.formulario.patchValue({
+					papeleta_votacion_personal: response[0].id
+				});
+			});
+		//Aquí se establece a que cliente pertenecen los archivos a traves del id de localStorage
 	}
 }

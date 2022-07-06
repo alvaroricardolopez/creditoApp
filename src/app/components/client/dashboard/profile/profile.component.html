@@ -4,63 +4,96 @@
 	</mat-toolbar>
 
 	<mat-card style="margin-top: 10px">
-<!--		<mat-grid-list cols="5" rowHeight="70px">-->
-<!--			<mat-grid-tile [colspan]="1" [rowspan]="1">-->
-<!--				<mat-label>Nombres: </mat-label>-->
-<!--				<mat-label>{{client.nombres}}</mat-label>-->
-<!--			</mat-grid-tile>-->
+		<mat-grid-list cols="5" rowHeight="70px">
+			<mat-grid-tile [colspan]="1" [rowspan]="1">
+				<mat-label>Nombres: </mat-label>
+				<mat-label>{{client.nombres}}</mat-label>
+			</mat-grid-tile>
 
-<!--			<mat-grid-tile [colspan]="1" [rowspan]="1">-->
-<!--				<mat-label>Apellidos: </mat-label>-->
-<!--				<mat-label>{{client.apellidos}}</mat-label>-->
-<!--			</mat-grid-tile>-->
-<!--			<mat-grid-tile [colspan]="1" [rowspan]="1">-->
-<!--				<mat-label>Cédula: </mat-label>-->
-<!--				<mat-label>{{client.cedula}}</mat-label>-->
-<!--			</mat-grid-tile>-->
+			<mat-grid-tile [colspan]="1" [rowspan]="1">
+				<mat-label>Apellidos: </mat-label>
+				<mat-label>{{client.apellidos}}</mat-label>
+			</mat-grid-tile>
+			<mat-grid-tile [colspan]="1" [rowspan]="1">
+				<mat-label>Cédula: </mat-label>
+				<mat-label>{{client.cedula}}</mat-label>
+			</mat-grid-tile>
 
-<!--			<mat-grid-tile [colspan]="1" [rowspan]="1">-->
-<!--				<mat-label>Ciudad: </mat-label>-->
-<!--				<mat-label>{{client.ciudad}}</mat-label>-->
-<!--			</mat-grid-tile>-->
+			<mat-grid-tile [colspan]="1" [rowspan]="1">
+				<mat-label>Ciudad: </mat-label>
+				<mat-label>{{client.ciudad}}</mat-label>
+			</mat-grid-tile>
 
-<!--			<mat-grid-tile [colspan]="1" [rowspan]="3">-->
-<!--				<img src="./assets/img/man.png" width="250" height="250" />-->
-<!--			</mat-grid-tile>-->
+			<mat-grid-tile [colspan]="1" [rowspan]="3">
+				<img src="./assets/img/man.png" width="250" height="250" />
+			</mat-grid-tile>
 
-<!--			<mat-grid-tile [colspan]="2" [rowspan]="1">-->
-<!--				<mat-label>Dirección: </mat-label>-->
-<!--				<mat-label>{{client.direccion}}</mat-label>-->
-<!--			</mat-grid-tile>-->
+			<mat-grid-tile [colspan]="2" [rowspan]="1">
+				<mat-label>Dirección: </mat-label>
+				<mat-label>{{client.direccion}}</mat-label>
+			</mat-grid-tile>
 
-<!--			<mat-grid-tile [colspan]="2" [rowspan]="1">-->
-<!--				<mat-label>Telefono: </mat-label>-->
-<!--				<mat-label>{{client.telefono}}</mat-label>-->
-<!--			</mat-grid-tile>-->
+			<mat-grid-tile [colspan]="2" [rowspan]="1">
+				<mat-label>Telefono: </mat-label>
+				<mat-label>{{client.telefono}}</mat-label>
+			</mat-grid-tile>
 
-<!--			<mat-grid-tile [colspan]="2" [rowspan]="1">-->
-<!--				<mat-label>Celular:</mat-label>-->
-<!--				<mat-label>{{client.celular}}</mat-label>-->
-<!--			</mat-grid-tile>-->
+			<mat-grid-tile [colspan]="2" [rowspan]="1">
+				<mat-label>Celular:</mat-label>
+				<mat-label>{{client.celular}}</mat-label>
+			</mat-grid-tile>
 
-<!--			<mat-grid-tile [colspan]="2" [rowspan]="1">-->
-<!--				<mat-label>Estado civil:</mat-label>-->
-<!--				<mat-label>{{client.estado_civil.name}}</mat-label>-->
-<!--			</mat-grid-tile>-->
+			<mat-grid-tile [colspan]="2" [rowspan]="1">
+				<mat-label>Estado civil:</mat-label>
+				<mat-label>{{client.estado_civil.name}}</mat-label>
+			</mat-grid-tile>
 
-<!--			<mat-grid-tile [colspan]="4" [rowspan]="1">-->
-<!--				<mat-label>Correo electrónico:</mat-label>-->
-<!--				<mat-label>{{client.correo}}</mat-label>-->
-<!--			</mat-grid-tile>-->
-<!--		</mat-grid-list>-->
-		<form
+			<mat-grid-tile [colspan]="4" [rowspan]="1">
+				<mat-label>Correo electrónico:</mat-label>
+				<mat-label>{{client.correo}}</mat-label>
+			</mat-grid-tile>
+		</mat-grid-list>
+	</mat-card>
+	<mat-card style="margin-top: 10px"
+		><form
 			[formGroup]="formulario"
 			(ngSubmit)="addCliente(formulario.value)"
 		>
-
-			<input type="file" id="fileFoto" formControlName="fileFoto" (change)="onFileChange($event)"/>
-      <input type="file" id="fileCedulaPersonal" formControlName="fileCedulaPersonal" (change)="onFileChange($event)"/>
+			<div>
+				<mat-label>Suba su foto: </mat-label>
+				<input
+					style="display: inline; margin-left: 137px"
+					type="file"
+					id="fileFoto"
+					formControlName="fileFoto"
+					(change)="onFileChange($event)"
+					accept=".png, .jpg, .jpeg"
+				/>
+			</div>
+			<div>
+				<mat-label>Suba su cédula de ciudadanía: </mat-label>
+				<input
+					style="display: inline; margin-left: 30px"
+					type="file"
+					id="fileCedulaPersonal"
+					formControlName="fileCedulaPersonal"
+					(change)="onFileChange($event)"
+					accept=".pdf"
+				/>
+			</div>
+			<div>
+				<mat-label>Suba su papeleta de votación: </mat-label>
+				<input
+					style="display: inline; margin-left: 33px"
+					type="file"
+					id="fileCedulaPersonal"
+					formControlName="fileCedulaPersonal"
+					(change)="onFileChange($event)"
+					accept=".pdf"
+				/>
+			</div>
 			<button
+				style="margin-top: 10px"
 				mat-flat-button
 				color="primary"
 				class="button ancho"
@@ -69,6 +102,6 @@
 			>
 				Enviar
 			</button>
-		</form>
-	</mat-card>
+		</form></mat-card
+	>
 </div>
