@@ -24,39 +24,26 @@ export class DatosComponent implements OnInit {
 			nombres: [
 				null,
 				Validators.required,
-				Validators.minLength(1),
-				Validators.pattern(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/)
 			],
 			apellidos: [
 				null,
 				Validators.required,
-				Validators.minLength(1),
-				Validators.pattern(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/)
 			],
 			cedula: [
 				null,
-				Validators.required,
-				Validators.minLength(9),
-				Validators.maxLength(9),
-				Validators.pattern(/^[0-9]*$/)
+				Validators.required
 			],
 			ciudad: [null, Validators.required],
 			direccion: [
 				null,
-				Validators.required,
-				Validators.minLength(1),
-				Validators.pattern(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/)
+				Validators.required
 			],
 			telefono: [
-				"",
-				Validators.pattern(/^[0-9]*$/)
+				null
 			],
 			celular: [
 				null,
-				Validators.required,
-				Validators.minLength(9),
-				Validators.maxLength(9),
-				Validators.pattern(/^[0-9]*$/)
+				Validators.required
 			],
 			correo: [null, Validators.email],
 			contrasenia: [null, Validators.required],
