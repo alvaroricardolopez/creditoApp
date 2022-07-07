@@ -21,13 +21,45 @@ export class DatosComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.ClientForm = this.formBuilder.group({
-			nombres: [null, Validators.required],
-			apellidos: [null, Validators.required],
-			cedula: [null, Validators.required],
+			nombres: [
+				null,
+				Validators.required,
+				Validators.minLength(1),
+				Validators.pattern(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/)
+			],
+			apellidos: [
+				null,
+				Validators.required,
+				Validators.minLength(1),
+				Validators.pattern(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/)
+			],
+			cedula: [
+				null,
+				Validators.required,
+				Validators.minLength(9),
+				Validators.maxLength(9),
+				Validators.pattern(/^[0-9]*$/)
+			],
 			ciudad: [null, Validators.required],
-			direccion: [null, Validators.required],
-			telefono: [null],
-			celular: [null, Validators.required],
+			direccion: [
+				null,
+				Validators.required,
+				Validators.minLength(1),
+				Validators.pattern(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/)
+			],
+			telefono: [
+				null,
+				Validators.minLength(9),
+				Validators.maxLength(9),
+				Validators.pattern(/^[0-9]*$/)
+			],
+			celular: [
+				null,
+				Validators.required,
+				Validators.minLength(9),
+				Validators.maxLength(9),
+				Validators.pattern(/^[0-9]*$/)
+			],
 			correo: [null, Validators.email],
 			contrasenia: [null, Validators.required],
 			estado_civil: [null, Validators.required]

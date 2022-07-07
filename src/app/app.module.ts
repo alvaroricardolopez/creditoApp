@@ -10,14 +10,12 @@ import { SharedModule } from './components/shared/shared.module';
 //Componentes
 import { LoginComponent } from './components/login/login.component';
 import { DatosComponent } from './components/client/datos/datos.component';
-import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		LoginComponent,
 		DatosComponent,
-		FileUploadComponent
 	],
 	imports: [
 		BrowserModule,
