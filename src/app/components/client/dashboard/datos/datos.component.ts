@@ -10,7 +10,6 @@ import { Client } from '@app/components/client/models/client.interface';
 	styleUrls: ['./datos.component.css']
 })
 export class DatosComponent implements OnInit {
-	estadoCivil: string;
 	estados: any = [];
 	ClientForm: FormGroup;
 

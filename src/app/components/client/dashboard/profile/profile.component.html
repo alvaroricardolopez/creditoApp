@@ -54,4 +54,54 @@
 			</mat-grid-tile>
 		</mat-grid-list>
 	</mat-card>
+	<mat-card style="margin-top: 10px"
+		><form
+			[formGroup]="formulario"
+			(ngSubmit)="addCliente(formulario.value)"
+		>
+			<div>
+				<mat-label>Suba su foto: </mat-label>
+				<input
+					style="display: inline; margin-left: 137px"
+					type="file"
+					id="fileFoto"
+					formControlName="fileFoto"
+					(change)="onFileChange($event)"
+					accept=".png, .jpg, .jpeg"
+				/>
+			</div>
+			<div>
+				<mat-label>Suba su cédula de ciudadanía: </mat-label>
+				<input
+					style="display: inline; margin-left: 30px"
+					type="file"
+					id="fileCedulaPersonal"
+					formControlName="fileCedulaPersonal"
+					(change)="onFileChange($event)"
+					accept=".pdf"
+				/>
+			</div>
+			<div>
+				<mat-label>Suba su papeleta de votación: </mat-label>
+				<input
+					style="display: inline; margin-left: 33px"
+					type="file"
+					id="fileCedulaPersonal"
+					formControlName="fileCedulaPersonal"
+					(change)="onFileChange($event)"
+					accept=".pdf"
+				/>
+			</div>
+			<button
+				style="margin-top: 10px"
+				mat-flat-button
+				color="primary"
+				class="button ancho"
+				type="submit"
+				[disabled]="!formulario.valid"
+			>
+				Enviar
+			</button>
+		</form></mat-card
+	>
 </div>
