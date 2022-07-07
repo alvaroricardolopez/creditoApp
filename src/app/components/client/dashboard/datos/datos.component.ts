@@ -48,9 +48,7 @@ export class DatosComponent implements OnInit {
 				Validators.pattern(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/)
 			],
 			telefono: [
-				null,
-				Validators.minLength(9),
-				Validators.maxLength(9),
+				"",
 				Validators.pattern(/^[0-9]*$/)
 			],
 			celular: [
