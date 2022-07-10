@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Cliente } from 'src/app/components/model/cliente.interface';
 import { ClientService } from '@app/components/client/services/client.service';
 import { Client } from '@app/components/client/models/client.interface';
 import { AuthService } from '@app/services/auth/auth.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileUploadService } from '@app/services/file-upload.service';
 
 @Component({
@@ -16,10 +15,6 @@ export class ProfileComponent implements OnInit {
 	panelOpenState = false;
 	client: Client;
 	formulario: FormGroup;
-	frmPareja: FormGroup;
-
-	casadoTexto = 'Casado/a';
-	enUnionTexto = 'En unión de hecho';
 
 	constructor(
 		private router: Router,
@@ -36,26 +31,28 @@ export class ProfileComponent implements OnInit {
 			papeleta_votacion_personal: null,
 			cedulaconyuge: null,
 			papeleta_conyugue: null,
-			fileFoto: '',
-			fileSourceFoto: '',
-			fileCedulaPersonal: '',
-			filePapeleta: ''
+			fileFoto: [
+        null,
+        Validators.required,
+      ],
+			fileCedulaPersonal: [
+        null,
+        Validators.required,
+      ],
+			filePapeleta: [
+        null,
+        Validators.required,
+      ],
+      fileCedulaConyugue:'',
+      filePapeletaConyugue:''
 		});
 
 		const idUser = JSON.parse(this.authService.getProfile()).id;
-		this.clientService.getClientById(idUser).subscribe((data) => {
+		this.clientService.getClientById(idUser).subscribe((data: Client) => {
 			this.client = data;
 		});
 	}
 
-	emparejado(dato: Client) {
-		if (
-			dato.estado_civil.name === this.casadoTexto ||
-			dato.estado_civil.name === this.enUnionTexto
-		) {
-			console.log('Acciones extra');
-		}
-	}
 
 	onFileChange(event: any) {
 		console.log(event.target.id);
@@ -85,11 +82,26 @@ export class ProfileComponent implements OnInit {
 				});
 			}
 		}
+
+    if (event.target.id === 'fileCedulaConyugue') {
+      if (event.target.files.length > 0) {
+        const file = event.target.files[0];
+        this.formulario.patchValue({
+          fileCedulaConyugue: file
+        });
+      }
+    }
+    if (event.target.id === 'filePapeletaConyugue') {
+      if (event.target.files.length > 0) {
+        const file = event.target.files[0];
+        this.formulario.patchValue({
+          filePapeletaConyugue: file
+        });
+      }
+    }
 	}
 
 	addCliente(form: any) {
-		console.log(form);
-
 		this.uploadService
 			.upload(this.formulario.get('fileSourceFoto')!.value)
 			.subscribe((response: any) => {
@@ -113,6 +125,5 @@ export class ProfileComponent implements OnInit {
 					papeleta_votacion_personal: response[0].id
 				});
 			});
-		//Aquí se establece a que cliente pertenecen los archivos a traves del id de localStorage
 	}
 }

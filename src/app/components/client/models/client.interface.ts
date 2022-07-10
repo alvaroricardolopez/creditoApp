@@ -15,6 +15,7 @@ export interface Client {
 export interface EstadoCivil {
 	id: number;
 	name: string;
+  tiene_Conyugue: boolean;
 }
 
 export interface DocumentosDeCliente {
