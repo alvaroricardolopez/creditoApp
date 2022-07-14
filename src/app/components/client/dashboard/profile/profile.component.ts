@@ -31,20 +31,11 @@ export class ProfileComponent implements OnInit {
 			papeleta_votacion_personal: null,
 			cedulaconyuge: null,
 			papeleta_conyugue: null,
-			fileFoto: [
-        null,
-        Validators.required,
-      ],
-			fileCedulaPersonal: [
-        null,
-        Validators.required,
-      ],
-			filePapeleta: [
-        null,
-        Validators.required,
-      ],
-      fileCedulaConyugue:'',
-      filePapeletaConyugue:''
+			fileFoto: [null, Validators.required],
+			fileCedulaPersonal: [null, Validators.required],
+			filePapeleta: [null, Validators.required],
+			fileCedulaConyugue: '',
+			filePapeletaConyugue: ''
 		});
 
 		const idUser = JSON.parse(this.authService.getProfile()).id;
@@ -52,7 +43,6 @@ export class ProfileComponent implements OnInit {
 			this.client = data;
 		});
 	}
-
 
 	onFileChange(event: any) {
 		console.log(event.target.id);
@@ -83,22 +73,22 @@ export class ProfileComponent implements OnInit {
 			}
 		}
 
-    if (event.target.id === 'fileCedulaConyugue') {
-      if (event.target.files.length > 0) {
-        const file = event.target.files[0];
-        this.formulario.patchValue({
-          fileCedulaConyugue: file
-        });
-      }
-    }
-    if (event.target.id === 'filePapeletaConyugue') {
-      if (event.target.files.length > 0) {
-        const file = event.target.files[0];
-        this.formulario.patchValue({
-          filePapeletaConyugue: file
-        });
-      }
-    }
+		if (event.target.id === 'fileCedulaConyugue') {
+			if (event.target.files.length > 0) {
+				const file = event.target.files[0];
+				this.formulario.patchValue({
+					fileCedulaConyugue: file
+				});
+			}
+		}
+		if (event.target.id === 'filePapeletaConyugue') {
+			if (event.target.files.length > 0) {
+				const file = event.target.files[0];
+				this.formulario.patchValue({
+					filePapeletaConyugue: file
+				});
+			}
+		}
 	}
 
 	addCliente(form: any) {

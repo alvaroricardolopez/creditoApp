@@ -43,9 +43,8 @@ import { MatListModule } from '@angular/material/list';
 		MatSelectModule,
 		MatStepperModule,
 		MatExpansionModule,
-    MatDividerModule,
-    MatListModule,
-
+		MatDividerModule,
+		MatListModule
 	],
 	exports: [
 		MatSliderModule,
@@ -64,8 +63,8 @@ import { MatListModule } from '@angular/material/list';
 		MatSelectModule,
 		MatStepperModule,
 		MatExpansionModule,
-    MatDividerModule,
-    MatListModule,
+		MatDividerModule,
+		MatListModule
 	]
 })
 export class SharedModule {}

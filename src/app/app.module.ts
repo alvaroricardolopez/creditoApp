@@ -12,11 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { DatosComponent } from './components/client/datos/datos.component';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		LoginComponent,
-		DatosComponent,
-	],
+	declarations: [AppComponent, LoginComponent, DatosComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,

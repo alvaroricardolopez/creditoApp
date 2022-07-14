@@ -1,9 +1,11 @@
 import { getDato } from './../../../model/documentos.interface';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
 import { Cliente } from 'src/app/components/model/cliente.interface';
 import { DocumentosService } from 'src/app/services/documentos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { environment as ENV } from 'src/environments/environment';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -16,20 +18,32 @@ export class DocumentosComponent implements OnInit {
 	id_cliente: number;
 	cliente: FormGroup;
 	getDatos: getDato;
+	env: string = ENV.apiUrl;
+	ListaDatos: any = [];
+	solicitud: any;
 
 	constructor(
 		private documentosService: DocumentosService,
 		private router: Router,
 		private formBuilder: FormBuilder,
-		private rout: ActivatedRoute
+		private rout: ActivatedRoute,
+		private userService: UserService
 	) {}
 
 	ngOnInit(): void {
+		const idSolicitud = Number(this.rout.snapshot.paramMap.get('num_sol'));
 		//this.num_sol = Number(this.rout.snapshot.paramMap.get('num_sol'));
-		this.documentosService.getDatos().subscribe((response: getDato) => {
-			this.getDatos = response;
-			console.log(this.getDatos);
-		});
+		this.userService
+			.getlistSolById(idSolicitud)
+			.subscribe((response: any) => {
+				this.solicitud = response;
+				console.log(this.solicitud);
+				// console.log(this.listSols);
+			});
+		// this.documentosService.getDatos().subscribe((response: getDato) => {
+		// 	this.getDatos = response;
+		// 	console.log(this.getDatos);
+		// });
 	}
 
 	getInfo() {
