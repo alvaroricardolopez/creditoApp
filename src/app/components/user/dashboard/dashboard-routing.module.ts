@@ -15,7 +15,7 @@ const routes: Routes = [
 			{ path: 'solicitudes', component: SolicitudesComponent },
 			{ path: 'buscar', component: BuscarComponent },
 			{
-				path: 'documentos/:num_sol/:id_cliente',
+				path: 'documentos/:num_sol',
 				component: DocumentosComponent
 			}
 		]

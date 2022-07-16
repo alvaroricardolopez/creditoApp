@@ -54,44 +54,76 @@
 			</mat-grid-tile>
 		</mat-grid-list>
 	</mat-card>
-	<mat-card style="margin-top: 10px"
-		><form
+	<mat-card style="margin-top: 10px">
+		<form
 			[formGroup]="formulario"
 			(ngSubmit)="addCliente(formulario.value)"
 		>
-			<div>
-				<mat-label>Suba su foto: </mat-label>
-				<input
-					style="display: inline; margin-left: 137px"
-					type="file"
-					id="fileFoto"
-					formControlName="fileFoto"
-					(change)="onFileChange($event)"
-					accept=".png, .jpg, .jpeg"
-				/>
-			</div>
-			<div>
-				<mat-label>Suba su cédula de ciudadanía: </mat-label>
-				<input
-					style="display: inline; margin-left: 30px"
-					type="file"
-					id="fileCedulaPersonal"
-					formControlName="fileCedulaPersonal"
-					(change)="onFileChange($event)"
-					accept=".pdf"
-				/>
-			</div>
-			<div>
-				<mat-label>Suba su papeleta de votación: </mat-label>
-				<input
-					style="display: inline; margin-left: 33px"
-					type="file"
-					id="fileCedulaPersonal"
-					formControlName="fileCedulaPersonal"
-					(change)="onFileChange($event)"
-					accept=".pdf"
-				/>
-			</div>
+			<mat-list>
+				<mat-list-item>Documentos personales</mat-list-item>
+				<div>
+					<mat-label>Suba su foto: </mat-label>
+					<input
+						style="display: inline; margin-left: 137px"
+						type="file"
+						id="fileFoto"
+						formControlName="fileFoto"
+						(change)="onFileChange($event)"
+						accept=".png, .jpg, .jpeg"
+					/>
+				</div>
+				<div>
+					<mat-label>Suba su cédula de ciudadanía: </mat-label>
+					<input
+						style="display: inline; margin-left: 30px"
+						type="file"
+						id="fileCedulaPersonal"
+						formControlName="fileCedulaPersonal"
+						(change)="onFileChange($event)"
+						accept=".pdf"
+					/>
+				</div>
+				<div>
+					<mat-label>Suba su papeleta de votación: </mat-label>
+					<input
+						style="display: inline; margin-left: 33px"
+						type="file"
+						id="filePapeleta"
+						formControlName="fileCedulaPersonal"
+						(change)="onFileChange($event)"
+						accept=".pdf"
+					/>
+				</div>
+				<div *ngIf="client.estado_civil.tiene_Conyugue">
+					<mat-divider></mat-divider>
+					<mat-list-item>Documentos de su Conyugue</mat-list-item>
+					<div>
+						<mat-label>Suba la cédula de su conyugue </mat-label>
+						<input
+							style="display: inline; margin-left: 30px"
+							type="file"
+							id="fileCedulaConyugue"
+							formControlName="fileCedulaPersonal"
+							(change)="onFileChange($event)"
+							accept=".pdf"
+						/>
+					</div>
+					<div>
+						<mat-label
+							>Suba la papeleta de votación de su conyugue:
+						</mat-label>
+						<input
+							style="display: inline; margin-left: 33px"
+							type="file"
+							id="filePapeletaConyugue"
+							formControlName="fileCedulaPersonal"
+							(change)="onFileChange($event)"
+							accept=".pdf"
+						/>
+					</div>
+				</div>
+			</mat-list>
+
 			<button
 				style="margin-top: 10px"
 				mat-flat-button

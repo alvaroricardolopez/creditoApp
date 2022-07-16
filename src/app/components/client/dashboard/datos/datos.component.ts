@@ -21,30 +21,13 @@ export class DatosComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.ClientForm = this.formBuilder.group({
-			nombres: [
-				null,
-				Validators.required,
-			],
-			apellidos: [
-				null,
-				Validators.required,
-			],
-			cedula: [
-				null,
-				Validators.required
-			],
+			nombres: [null, Validators.required],
+			apellidos: [null, Validators.required],
+			cedula: [null, Validators.required],
 			ciudad: [null, Validators.required],
-			direccion: [
-				null,
-				Validators.required
-			],
-			telefono: [
-				null
-			],
-			celular: [
-				null,
-				Validators.required
-			],
+			direccion: [null, Validators.required],
+			telefono: [null],
+			celular: [null, Validators.required],
 			correo: [null, Validators.email],
 			contrasenia: [null, Validators.required],
 			estado_civil: [null, Validators.required]

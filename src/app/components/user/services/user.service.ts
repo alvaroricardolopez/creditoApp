@@ -11,6 +11,11 @@ export class UserService {
 	constructor(private http: HttpClient) {}
 
 	getlistSol(): Observable<listSol> {
-		return this.http.get<listSol>(ENV.apiUrl + '/auth/listsol');
+		return this.http.get<listSol>(ENV.apiUrl + '/solicitud-de-creditos');
+	}
+	getlistSolById(id: number): Observable<listSol> {
+		return this.http.get<listSol>(
+			ENV.apiUrl + '/solicitud-de-creditos/' + id.toString()
+		);
 	}
 }

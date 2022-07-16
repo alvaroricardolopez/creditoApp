@@ -3,7 +3,37 @@
 		<span>LISTA DE SOLICITUDES</span>
 	</mat-toolbar>
 
-	<table class="mat-elevation-z8 table table-hover" data-bs-spy="scroll">
+	<div class="table-responsive pt-3">
+		<table class="table table-hover table-bordered">
+			<thead class="table-primary">
+				<tr>
+					<th>nombres</th>
+					<th>Apellidos</th>
+					<th>Monto</th>
+					<th>Fecha</th>
+					<th>Estado</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody *ngFor="let listsol of listSols">
+				<tr>
+					<td>{{listsol.cliente.nombres}}</td>
+					<td>{{listsol.cliente.apellidos}}</td>
+					<td>${{listsol.monto_solicitado}}</td>
+					<td>{{listsol.fecha}}</td>
+					<td>{{listsol.condicion}}</td>
+					<td>
+						<a
+							(click)="revisarSol(listsol.id)"
+							class="btn btn-primary"
+							>Revisar</a
+						>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- <table class="mat-elevation-z8 table table-hover" data-bs-spy="scroll">
 		<thead>
 			<tr>
 				<th scope="col">Solicitud</th>
@@ -38,5 +68,5 @@
 				</td>
 			</tr>
 		</tbody>
-	</table>
+	</table> -->
 </div>
