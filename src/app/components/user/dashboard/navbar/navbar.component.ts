@@ -1,6 +1,5 @@
-import { Menu } from './../../../../interfaces/menu';
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from 'src/app/services/menu.service';
+import { AuthService } from '@app/services/auth/auth.service';
 
 @Component({
 	selector: 'app-navbar',
@@ -8,17 +7,13 @@ import { MenuService } from 'src/app/services/menu.service';
 	styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-	menu: Menu[] = [];
 
-	constructor(private _menuService: MenuService) {}
+  constructor(private authService: AuthService) {}
 
 	ngOnInit(): void {
-		this.cargarMenu();
 	}
+  logout(): void {
+    this.authService.logoutUser();
+  }
 
-	cargarMenu() {
-		this._menuService.getMenu().subscribe((data) => {
-			this.menu = data;
-		});
-	}
 }

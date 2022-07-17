@@ -40,7 +40,7 @@ export class DatosComponent implements OnInit {
 			.postClient(form)
 			.subscribe((data) => console.log(data));
 		alert('Registro existoso, ahora debe iniciar sesión.');
-		this.router.navigate(['/login']);
+		this.router.navigate(['/loginClient']);
 	}
 
 	listEstadoCivil() {

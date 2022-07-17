@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { BuscarComponent } from './buscar/buscar.component';
 import { DocumentosComponent } from './documentos/documentos.component';
+import { LoginUsersComponent } from '@app/components/loginUsers/login-users.component';
 
 @NgModule({
 	declarations: [
@@ -17,7 +18,8 @@ import { DocumentosComponent } from './documentos/documentos.component';
 		NavbarComponent,
 		SolicitudesComponent,
 		BuscarComponent,
-		DocumentosComponent
+		DocumentosComponent,
+		LoginUsersComponent
 	],
 	imports: [CommonModule, DashboardRoutingModule, SharedModule]
 })

@@ -5,6 +5,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginUsersComponent } from '@app/components/loginUsers/login-users.component';
 
 const routes: Routes = [
 	{
@@ -17,6 +18,10 @@ const routes: Routes = [
 			{
 				path: 'documentos/:num_sol',
 				component: DocumentosComponent
+			},
+			{
+				path: 'loginClient',
+				component: LoginUsersComponent
 			}
 		]
 	}

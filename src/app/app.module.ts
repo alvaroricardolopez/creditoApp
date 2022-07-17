@@ -8,11 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './components/shared/shared.module';
 
 //Componentes
-import { LoginComponent } from './components/login/login.component';
+import { LoginClientComponent } from './components/loginClient/login-client.component';
 import { DatosComponent } from './components/client/datos/datos.component';
 
 @NgModule({
-	declarations: [AppComponent, LoginComponent, DatosComponent],
+	declarations: [AppComponent, LoginClientComponent, DatosComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,

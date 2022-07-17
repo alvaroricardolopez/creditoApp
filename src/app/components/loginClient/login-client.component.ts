@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { AuthService } from '@app/services/auth/auth.service';
 
 @Component({
-	selector: 'app-login',
-	templateUrl: './login.component.html',
-	styleUrls: ['./login.component.css']
+	selector: 'app-loginClient',
+	templateUrl: './login-client.component.html',
+	styleUrls: ['./login-client.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginClientComponent implements OnInit {
 	form: FormGroup;
 	loading = false;
 
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		if (this.authservice.isAuthenticated()) {
+		if (this.authservice.isAuthenticatedClient()) {
 			this.router.navigate(['/client/perfil']);
 		}
 	}
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
 		let correoCoincide = false;
 		let contraseniaCoincide = false;
 
-		this.authservice.getUser(correo).subscribe((data) => {
+		this.authservice.getClient(correo).subscribe((data) => {
 			if (data.length !== 0) {
 				correoCoincide = true;
 				if (data[0].contrasenia === contrasenia) {

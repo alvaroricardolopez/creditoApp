@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './config/guard/auth.guard';
-import { LoginComponent } from '@app/components/login/login.component';
+import { LoginClientComponent } from '@app/components/loginClient/login-client.component';
 import { DatosComponent } from './components/client/dashboard/datos/datos.component';
+import { LoginUsersComponent } from '@app/components/loginUsers/login-users.component';
 
 const routes: Routes = [
 	{
@@ -32,7 +33,8 @@ const routes: Routes = [
 			}
 		]
 	},
-	{ path: 'login', component: LoginComponent },
+	{ path: 'client/login', component: LoginClientComponent },
+	{ path: 'users/login', component: LoginUsersComponent },
 	{ path: 'registro', component: DatosComponent }
 ];
 
