@@ -23,13 +23,6 @@ const routes: Routes = [
 					import(
 						'./components/client/dashboard/dashboard.module'
 					).then((y) => y.DashboardModule)
-			},
-			{
-				path: 'dashboard',
-				loadChildren: () =>
-					import(
-						'./components/admin/dashboard/dashboard.module'
-					).then((z) => z.DashboardModule)
 			}
 		]
 	},

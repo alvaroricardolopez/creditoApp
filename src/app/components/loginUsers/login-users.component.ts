@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthService } from '@app/services/auth/auth.service';
 
@@ -16,11 +15,10 @@ export class LoginUsersComponent implements OnInit {
 	constructor(
 		private fb: FormBuilder,
 		private authservice: AuthService,
-		private _snackBar: MatSnackBar,
 		private router: Router
 	) {
 		this.form = this.fb.group({
-			correo: ['', Validators.required],
+			user_name: ['', Validators.required],
 			contrasenia: ['', Validators.required]
 		});
 	}
@@ -32,12 +30,12 @@ export class LoginUsersComponent implements OnInit {
 	}
 
 	ingresar(form: any) {
-		const correo = form.correo;
+		const user_name = form.user_name;
 		const contrasenia = form.contrasenia;
 		let correoCoincide = false;
 		let contraseniaCoincide = false;
 
-		this.authservice.getUser(correo).subscribe((data) => {
+		this.authservice.getUser(user_name).subscribe((data) => {
 			if (data.length !== 0) {
 				correoCoincide = true;
 				if (data[0].contrasenia === contrasenia) {

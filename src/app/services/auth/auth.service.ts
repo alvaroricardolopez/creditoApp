@@ -15,8 +15,8 @@ export class AuthService {
 		return this.http.get<any>(ENV.apiUrl + '/clientes?correo=' + email);
 	}
 
-	getUser(email: string): Observable<any> {
-		return this.http.get<any>(ENV.apiUrl + '/usuarios?correo=' + email);
+	getUser(user_name: string): Observable<any> {
+		return this.http.get<any>(ENV.apiUrl + '/usuarios?user_name=' + user_name);
 	}
 
 	getProfile() {
